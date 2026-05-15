@@ -1,0 +1,16 @@
+---
+import { systemMembers } from "../data/systemMembers";
+---
+
+<div class="grid">
+  {
+    systemMembers.map((member) => (
+      <div class="laurelae">
+        <img src={member.icon} alt="" />
+        <div class="laurelaename">{member.displayName}</div>
+        <div class="laurelaespecies">{member.species}</div>
+        <a href={member.url}>{member.website}</a>
+      </div>
+    ))
+  }
+</div>

@@ -1,0 +1,60 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import { formatDate } from "../lib/dates";
+
+interface Props {
+	title: string;
+	date: Date;
+	description: string;
+	author: string;
+	feature_image?: string;
+	feature_alt?: string;
+	feature_caption?: string;
+}
+
+const {
+	title,
+	date,
+	description,
+	author,
+	feature_image,
+	feature_alt,
+	feature_caption,
+} = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <main>
+    <Navbar />
+    <div class="contentcontainer">
+      <div class="content">
+        <header>
+          <div class="info">
+            <span class="byline">
+              <time datetime={date.toISOString()}>{formatDate(date)}</time>
+              &middot;
+              <span>{author}</span>
+            </span>
+            <h1>{title}</h1>
+            <p>{description}</p>
+          </div>
+          {
+            feature_image && (
+              <div class="headerfeatureimagecontainer">
+                {feature_caption && (
+                  <div class="imageinfo" set:html={feature_caption} />
+                )}
+                <img
+                  src={feature_image}
+                  alt={feature_alt || ""}
+                />
+              </div>
+            )
+          }
+        </header>
+        <slot />
+      </div>
+    </div>
+  </main>
+</BaseLayout>

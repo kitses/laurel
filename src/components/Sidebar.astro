@@ -1,0 +1,38 @@
+---
+import { updates } from "../data/updates";
+import { sidebarLinks } from "../data/sidebarLinks";
+---
+
+<div id="sidebar">
+  <div class="sidebarsection">
+    <div class="sidebarsectionpaddedcontent">
+      <h1>updates</h1>
+      <hr>
+      {
+        updates.map((update) => (
+          <p>
+            <span class="tabular">{update.date}</span> ...{" "}
+            <span set:html={update.text} />
+          </p>
+        ))
+      }
+    </div>
+  </div>
+  <div class="sidebarsection">
+    <div class="sidebarsectionpaddedcontent">
+      <h1>links</h1>
+    </div>
+    {
+      sidebarLinks.map((link) => (
+        <a
+          class="sidelink"
+          href={link.href}
+          rel={link.rel}
+        >
+          <img src={link.icon} alt="" />
+          <span>{link.label}</span>
+        </a>
+      ))
+    }
+  </div>
+</div>

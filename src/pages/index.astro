@@ -1,0 +1,90 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Sidebar from "../components/Sidebar.astro";
+import HomeCarousel from "../components/HomeCarousel";
+import { getCarouselArrowColors } from "../lib/carousel";
+import { decorateNotices } from "../utils/notices";
+import { formatDate } from "../lib/dates";
+
+const postEntries = await getCollection("posts");
+const latestPosts = postEntries
+	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+	.slice(0, 3);
+const carouselPosts = await Promise.all(
+	latestPosts.map(async (post) => ({
+		title: post.data.title,
+		description: post.data.description,
+		dateIso: post.data.date.toISOString(),
+		dateDisplay: formatDate(post.data.date),
+		author: post.data.author,
+		href: `/posts/${post.id}/`,
+		featureImage: post.data.feature_image,
+		arrowColors: await getCarouselArrowColors(post.data.feature_image),
+	})),
+);
+
+const noticeEntries = await getCollection("notices");
+const decoratedNotices = decorateNotices(noticeEntries);
+
+const renderedNotices = await Promise.all(
+	decoratedNotices.map(async (notice) => {
+		const { Content } = await render(notice.post);
+		return {
+			...notice,
+			Content,
+		};
+	}),
+);
+---
+
+<BaseLayout>
+  <main class="homepage">
+    <Navbar />
+    {
+      carouselPosts.length > 0 && (
+        <HomeCarousel posts={carouselPosts} client:load />
+      )
+    }
+    <div class="contentcontainer">
+      <div class="content">
+        {
+          renderedNotices.map((notice) => (
+            <>
+              {notice.type === "opus" ? (
+                notice.first ? (
+                  <>
+                    <h1 class="notice">
+                      <span class="mono">audio/opus</span>{" "}
+                      <span class="separator">::</span>{" "}
+                      {notice.displayDate}
+                    </h1>
+                    <hr />
+                  </>
+                ) : (
+                  <h2 class="addendum">
+                    <span class="mono">audio/opus</span>{" "}
+                    <span class="separator">::</span>{" "}
+                    {notice.displayDate}
+                  </h2>
+                )
+              ) : (
+                <>
+                  <h1 class="notice">
+                    <span class="mono">{notice.prefix}</span>notice{" "}
+                    <span class="separator">::</span>{" "}
+                    {notice.displayDate}
+                  </h1>
+                  <hr />
+                </>
+              )}
+              <notice.Content />
+            </>
+          ))
+        }
+      </div>
+      <Sidebar />
+    </div>
+  </main>
+</BaseLayout>
