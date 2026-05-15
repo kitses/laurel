@@ -677,6 +677,10 @@ img.aboutphoto {
     flex-direction: column-reverse;
   }
 
+  nav.carouseldots {
+    display: none;
+  }
+
   #sidebar {
     width: 100%;
   }
