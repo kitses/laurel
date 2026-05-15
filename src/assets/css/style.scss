@@ -81,7 +81,7 @@ a {
   }
 }
 
-p a[href*="//"]::after {
+.content a[href*="//"]:not(:has(> img:only-child)):not(.laurelae a)::after {
   content: "\2197";
   font-size: 0.85em;
   font-weight: 300;
