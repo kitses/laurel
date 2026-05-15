@@ -678,6 +678,10 @@ img.aboutphoto {
     flex-direction: column-reverse;
   }
 
+  #carouselcontainer img {
+    aspect-ratio: 3 / 2;
+  }
+
   nav.carouseldots {
     display: none;
   }
