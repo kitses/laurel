@@ -19,7 +19,7 @@ It had an absolutely atrocious aesthetic with bad contrast, as the colour scheme
 
 Thanks to the efforts of [Aspen](https://aspen.llia.cc/), [Flora](https://flora.llia.cc/), and [yours truly](https://elle.llia.cc/), you and us musn't worry anymore, as the only efficient solution to that horseshit was to just trash it completely and make a new layout entirely. While it _is_ marginally more subdued, and we did have to revamp the previous cover images to fit in, it's more managable and reflects our current selves better. AND we don't need our blog on Aspen's site anymore!
 
-For one, we were less liberal with how we did things; while it was internally formulated before we did anything, we took an iterative approach was taken so that it could actually be to standard (one person just did it in one shot for _llia's site_, whom we won't name). Secondly, the aforementioned blog is now directly integrated instead of being on a separate site; it was that way considering that it originally was hosted on Nekoweb, thus not easily updateable. And finally, its existence is no longer _completely and utterly pointless_.
+For one, we were less liberal with how we did things; while it was internally formulated before we did anything, we did an iterative approach so that it could actually be to standard (one person just did it in one shot for _llia's site_, whom we won't name). Secondly, the aforementioned blog is now directly integrated instead of being on a separate site; it was that way considering that it originally was hosted on Nekoweb, thus not easily updateable. And finally, its existence is no longer _completely and utterly pointless_.
 
 If this feels more corporate or "professional": you aren't us and don't like what we like, so keep it. kthxbai
 
