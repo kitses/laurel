@@ -42,4 +42,9 @@ export const sidebarLinks: SidebarLink[] = [
 		icon: "/assets/img/icons/bluesky.svg",
 		label: "Bluesky",
 	},
+	{
+		href: "https://llia.atabook.org/",
+		icon: "/assets/img/icons/atabook.svg",
+		label: "Guestbook",
+	},
 ];
