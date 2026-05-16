@@ -682,11 +682,14 @@ img.aboutphoto {
     aspect-ratio: 3 / 2;
   }
 
-  nav.carouseldots {
-    display: none;
-  }
-
   #sidebar {
     width: 100%;
+  }
+}
+
+@media (max-width: 640px) and (orientation: portrait) {
+  .carouselcontrol,
+  nav.carouseldots {
+    display: none;
   }
 }

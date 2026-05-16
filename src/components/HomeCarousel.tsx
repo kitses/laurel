@@ -21,6 +21,8 @@ type HomeCarouselProps = {
 
 const advanceMs = 7000;
 const transitionMs = 500;
+const mobilePortraitQuery = "(max-width: 640px) and (orientation: portrait)";
+const swipeThreshold = 40;
 
 function nextIndex(index: number, total: number) {
 	return (index + 1) % total;
@@ -48,6 +50,8 @@ export default function HomeCarousel({ posts }: HomeCarouselProps) {
 	stateRef.current = { activeIndex, elapsedMs };
 
 	const transitionTimeoutRef = useRef<number | undefined>(undefined);
+	const touchStartRef = useRef<{ x: number; y: number } | null>(null);
+	const swipedRef = useRef(false);
 
 	const transitionTo = (index: number, lock = false, dotProgress?: number) => {
 		const { activeIndex: currentIdx, elapsedMs: currentElapsed } =
@@ -115,10 +119,58 @@ export default function HomeCarousel({ posts }: HomeCarouselProps) {
 		transitionTo(index, true);
 	};
 
+	const canSwipe = () =>
+		posts.length > 1 &&
+		typeof window !== "undefined" &&
+		window.matchMedia(mobilePortraitQuery).matches;
+
+	const handleTouchStart = (event: JSX.TargetedTouchEvent<HTMLElement>) => {
+		if (!canSwipe()) return;
+
+		const touch = event.touches[0];
+		touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+	};
+
+	const handleTouchEnd = (event: JSX.TargetedTouchEvent<HTMLElement>) => {
+		const touchStart = touchStartRef.current;
+		touchStartRef.current = null;
+
+		if (!touchStart || !canSwipe()) return;
+
+		const touch = event.changedTouches[0];
+		const deltaX = touch.clientX - touchStart.x;
+		const deltaY = touch.clientY - touchStart.y;
+
+		if (
+			Math.abs(deltaX) < swipeThreshold ||
+			Math.abs(deltaX) < Math.abs(deltaY)
+		) {
+			return;
+		}
+
+		swipedRef.current = true;
+		moveTo(
+			deltaX < 0
+				? nextIndex(activeIndex, posts.length)
+				: previousIndex(activeIndex, posts.length),
+		);
+	};
+
+	const handleClickCapture = (event: JSX.TargetedMouseEvent<HTMLElement>) => {
+		if (!swipedRef.current) return;
+
+		swipedRef.current = false;
+		event.preventDefault();
+		event.stopPropagation();
+	};
+
 	return (
 		<section
 			id="carouselcontainer"
 			aria-label="Featured posts carousel"
+			onTouchStart={handleTouchStart}
+			onTouchEnd={handleTouchEnd}
+			onClickCapture={handleClickCapture}
 			onMouseLeave={() => {
 				setHovered(false);
 				setLocked(false);
@@ -136,7 +188,12 @@ export default function HomeCarousel({ posts }: HomeCarouselProps) {
 					tabIndex={index === activeIndex ? undefined : -1}
 				>
 					{post.featureImage && (
-						<img className="carouselimage" src={post.featureImage} alt="" fetchpriority="high" />
+						<img
+							className="carouselimage"
+							src={post.featureImage}
+							alt=""
+							fetchpriority="high"
+						/>
 					)}
 					<div className="carouselgradient" />
 					<div className="carouseltext">
