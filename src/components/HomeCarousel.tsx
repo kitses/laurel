@@ -136,7 +136,7 @@ export default function HomeCarousel({ posts }: HomeCarouselProps) {
 					tabIndex={index === activeIndex ? undefined : -1}
 				>
 					{post.featureImage && (
-						<img className="carouselimage" src={post.featureImage} alt="" />
+						<img className="carouselimage" src={post.featureImage} alt="" fetchpriority="high" />
 					)}
 					<div className="carouselgradient" />
 					<div className="carouseltext">
