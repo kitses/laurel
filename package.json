@@ -11,6 +11,7 @@
 		"astro": "astro",
 		"format": "biome format --write",
 		"format:check": "biome format",
+		"check": "astro check",
 		"lint": "biome lint",
 		"deploy": "astro build && wrangler pages deploy"
 	},
