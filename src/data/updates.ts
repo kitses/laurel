@@ -14,6 +14,6 @@ export const updates: Update[] = [
 	},
 	{
 		date: "2025-11-05",
-		text: "<s>move to deno for building and</s> remove github link due to obsolescence",
+		text: "move to deno for building and remove github link due to obsolescence",
 	},
 ];
