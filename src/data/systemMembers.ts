@@ -18,7 +18,7 @@ export const systemMembers: SystemMember[] = [
 		url: "https://flora.llia.cc",
 		displayName: "Flora Novak",
 		icon: "/assets/img/laurelae/flora.avif",
-		species: "Avali, Glaceon",
+		species: "Avali",
 		website: "flora.llia.cc",
 	},
 	{
