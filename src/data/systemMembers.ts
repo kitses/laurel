@@ -8,6 +8,13 @@ export interface SystemMember {
 
 export const systemMembers: SystemMember[] = [
 	{
+		url: "https://ivy.llia.cc",
+		displayName: "Ivy Ninine",
+		icon: "/assets/img/laurelae/ivy.svg",
+		species: "Rabbit",
+		website: "ivy.llia.cc",
+	},
+	{
 		url: "https://aspen.llia.cc",
 		displayName: "Aspen Purcell",
 		icon: "/assets/img/laurelae/aspen.svg",
