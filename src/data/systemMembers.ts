@@ -11,7 +11,7 @@ export const systemMembers: SystemMember[] = [
 		url: "https://ivy.llia.cc",
 		displayName: "Ivy Ninine",
 		icon: "/assets/img/laurelae/ivy.svg",
-		species: "Rabbit",
+		species: "Rabbit, Cat",
 		website: "ivy.llia.cc",
 	},
 	{
