@@ -2,9 +2,17 @@
 @import "../woff/interdisplay.css";
 @import "../woff/geistmono.css";
 
-$font-copy: IBM Plex Sans, Arial, Liberation Sans, system-ui;
-$font-heading: Inter Display, sans-serif;
-$font-code: Geist Mono, monospace;
+$font-copy:
+	IBM Plex Sans,
+	Arial,
+	Liberation Sans,
+	system-ui;
+$font-heading:
+	Inter Display,
+	sans-serif;
+$font-code:
+	Geist Mono,
+	monospace;
 
 $page: #333;
 $text: #222;
@@ -52,59 +60,59 @@ $icon-size: 16px;
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html {
-  background: $page;
-  color: $text;
+	background: $page;
+	color: $text;
 }
 
 body {
-  margin: 0;
-  min-height: 100svh;
-  background:
-    url("/assets/img/grawlix.avif") bottom center / cover no-repeat,
-    $body-gradient;
-  font: 14px / 1.5 $font-copy;
+	margin: 0;
+	min-height: 100svh;
+	background:
+		url("/assets/img/grawlix.avif") bottom center / cover no-repeat,
+		$body-gradient;
+	font: 14px / 1.5 $font-copy;
 }
 
 a {
-  color: inherit;
+	color: inherit;
 
-  &:hover {
-    opacity: 0.75;
-  }
+	&:hover {
+		opacity: 0.75;
+	}
 
-  &:active {
-    text-decoration-style: dotted;
-  }
+	&:active {
+		text-decoration-style: dotted;
+	}
 }
 
 .content a[href*="//"]:not(:has(> img:only-child)):not(.laurelae a)::after {
-  content: "\2197";
-  font-size: 0.85em;
-  font-weight: 300;
+	content: "\2197";
+	font-size: 0.85em;
+	font-weight: 300;
 }
 
 img:not([src$=".svg"]) {
-  width: 100%;
-  height: auto;
+	width: 100%;
+	height: auto;
 }
 
 .byline {
-  display: flex;
-  gap: 4px;
-  opacity: 0.75;
-  font-style: italic;
+	display: flex;
+	gap: 4px;
+	opacity: 0.75;
+	font-style: italic;
 }
 
 hr {
-  height: 1px;
-  margin: 0.5em 0;
-  border: 0;
-  background: $rule;
-  filter: $drop-shadow-light;
+	height: 1px;
+	margin: 0.5em 0;
+	border: 0;
+	background: $rule;
+	filter: $drop-shadow-light;
 }
 
 h1,
@@ -113,581 +121,582 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0.25em 0;
+	margin: 0.25em 0;
 }
 
 main {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 100svh;
-  max-width: $content-width;
-  margin: 0 auto;
-  background: $surface;
-  box-shadow: $shadow-main;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-height: 100svh;
+	max-width: $content-width;
+	margin: 0 auto;
+	background: $surface;
+	box-shadow: $shadow-main;
 
-  &.homepage {
-    max-width: $homepage-width;
-  }
+	&.homepage {
+		max-width: $homepage-width;
+	}
 }
 
 .contentcontainer {
-  display: flex;
-  flex: 1;
-  text-shadow: $text-shadow-light;
+	display: flex;
+	flex: 1;
+	text-shadow: $text-shadow-light;
 }
 
 .content {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 100%;
-  padding: 0 1em;
+	position: relative;
+	z-index: 1;
+	display: block;
+	width: 100%;
+	padding: 0 1em;
 
-  p,
-  .entry {
-    margin: 0.75em 0;
-    line-height: 1.6;
-  }
+	p,
+	.entry {
+		margin: 0.75em 0;
+		line-height: 1.6;
+	}
 
-  ul {
-    margin: 0.75em 0 0;
-  }
+	ul {
+		margin: 0.75em 0 0;
+	}
 
-  details {
-    display: flex;
-    flex-direction: column;
-    margin: 0.75em 0;
-    background: $surface-alt;
-    box-shadow: $shadow-mid;
+	details {
+		display: flex;
+		flex-direction: column;
+		margin: 0.75em 0;
+		background: $surface-alt;
+		box-shadow: $shadow-mid;
 
-    summary {
-      padding: 0.5em 0.75em;
-      background: $page;
-      color: $surface;
-      font-weight: 600;
-      text-shadow: $text-shadow-dark;
-    }
+		summary {
+			padding: 0.5em 0.75em;
+			background: $page;
+			color: $surface;
+			font-weight: 600;
+			text-shadow: $text-shadow-dark;
+		}
 
-    p {
-      margin: 0.75em;
-    }
-  }
+		p {
+			margin: 0.75em;
+		}
+	}
 }
 
 #navcontainer {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  background: $page;
-  color: $surface;
-  box-shadow: $shadow-high;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	background: $page;
+	color: $surface;
+	box-shadow: $shadow-high;
 
-  nav {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: $nav-height;
-    padding-inline: 16px;
-    filter: $drop-shadow-dark;
+	nav {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: $nav-height;
+		padding-inline: 16px;
+		filter: $drop-shadow-dark;
 
-    a {
-      display: flex;
-    }
-  }
+		a {
+			display: flex;
+		}
+	}
 }
 
 main.homepage {
-  #navcontainer {
-    margin-bottom: -2.5em;
-    background: $page-veil;
-    box-shadow: none;
-    animation-name: homepagenav;
-    animation-fill-mode: both;
-    animation-timeline: scroll(root block);
-    animation-range: calc(35em - 128px) calc(35em - 24px);
-  }
+	#navcontainer {
+		margin-bottom: -2.5em;
+		background: $page-veil;
+		box-shadow: none;
+		animation-name: homepagenav;
+		animation-fill-mode: both;
+		animation-timeline: scroll(root block);
+		animation-range: calc(35em - 128px) calc(35em - 24px);
+	}
 
-  .content {
-    box-shadow: $shadow-content;
-  }
+	.content {
+		box-shadow: $shadow-content;
+	}
 }
 
 @keyframes homepagenav {
-  from {
-    background: $page-veil;
-    box-shadow: none;
-  }
+	from {
+		background: $page-veil;
+		box-shadow: none;
+	}
 
-  to {
-    background: $page;
-    box-shadow: $shadow-high;
-  }
+	to {
+		background: $page;
+		box-shadow: $shadow-high;
+	}
 }
 
 #navlogo {
-  height: 14px;
+	height: 14px;
 }
 
 #navlinks {
-  display: flex;
-  gap: 8px;
-  margin-left: auto;
+	display: flex;
+	gap: 8px;
+	margin-left: auto;
 }
 
 header {
-  .info {
-    margin: 0.75em 0;
+	.info {
+		margin: 0.75em 0;
 
-    h1 {
-      margin: -4px 0;
-    }
-  }
+		h1 {
+			margin: -4px 0;
+		}
+	}
 
-  .headerfeatureimagecontainer {
-    position: relative;
-    display: flex;
-    box-shadow: $shadow-high;
+	.headerfeatureimagecontainer {
+		position: relative;
+		display: flex;
+		box-shadow: $shadow-high;
 
-    .imageinfo {
-      position: absolute;
-      width: 100%;
-      padding: 0.25em 0.5em;
-      background: $page-panel;
-      color: $surface;
-      box-shadow: $shadow-high;
-      opacity: 0;
-      text-shadow: $text-shadow-dark;
-      transition: opacity $transition-panel;
-    }
+		.imageinfo {
+			position: absolute;
+			width: 100%;
+			padding: 0.25em 0.5em;
+			background: $page-panel;
+			color: $surface;
+			box-shadow: $shadow-high;
+			opacity: 0;
+			text-shadow: $text-shadow-dark;
+			transition: opacity $transition-panel;
+		}
 
-    &:hover .imageinfo {
-      opacity: 1;
-    }
-  }
+		&:hover .imageinfo {
+			opacity: 1;
+		}
+	}
 }
 
 .carouseltext,
 header .info {
+	p,
+	h1 {
+		margin: 0;
+	}
 
-  p,
-  h1 {
-    margin: 0;
-  }
-
-  h1 {
-    font-family: $font-heading;
-    font-size: 3em;
-    line-height: 1.2;
-  }
+	h1 {
+		font-family: $font-heading;
+		font-size: 3em;
+		line-height: 1.2;
+	}
 }
 
 #carouselcontainer {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  overflow: hidden;
-  background: #000;
-  box-shadow: $shadow-high;
+	position: relative;
+	z-index: 2;
+	display: grid;
+	overflow: hidden;
+	background: #000;
+	box-shadow: $shadow-high;
 
-  a {
-    &:hover {
-      opacity: 1;
-    }
-  }
+	a {
+		&:hover {
+			opacity: 1;
+		}
+	}
 
-  img {
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-    user-select: none;
-  }
+	img {
+		aspect-ratio: 16 / 10;
+		object-fit: cover;
+		user-select: none;
+	}
 }
 
 .carouselslide {
-  position: relative;
-  display: block;
-  grid-area: 1 / 1;
-  z-index: 0;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity $transition-fade;
+	position: relative;
+	display: block;
+	grid-area: 1 / 1;
+	z-index: 0;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity $transition-fade;
 
-  &.is-active {
-    z-index: 2;
-    opacity: 1;
-    pointer-events: auto;
-  }
+	&.is-active {
+		z-index: 2;
+		opacity: 1;
+		pointer-events: auto;
+	}
 
-  &.is-exiting {
-    z-index: 1;
-    opacity: 1;
-    transition: none;
-  }
+	&.is-exiting {
+		z-index: 1;
+		opacity: 1;
+		transition: none;
+	}
 }
 
 .carouselimage {
-  display: block;
+	display: block;
 }
 
 .carouselgradient {
-  position: absolute;
-  bottom: 0;
-  z-index: 2;
-  width: 100%;
-  height: 40%;
-  background: $carousel-gradient;
-  pointer-events: none;
+	position: absolute;
+	bottom: 0;
+	z-index: 2;
+	width: 100%;
+	height: 40%;
+	background: $carousel-gradient;
+	pointer-events: none;
 }
 
 .carouseltext {
-  position: absolute;
-  bottom: 0;
-  z-index: 3;
-  width: 100%;
-  padding: 1em;
-  color: $surface;
-  text-shadow: $text-shadow-image;
-  pointer-events: none;
+	position: absolute;
+	bottom: 0;
+	z-index: 3;
+	width: 100%;
+	padding: 1em;
+	color: $surface;
+	text-shadow: $text-shadow-image;
+	pointer-events: none;
 }
 
 .carouselcontrol {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 4;
-  display: flex;
-  align-items: center;
-  width: 10%;
-  height: 20%;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 4;
+	display: flex;
+	align-items: center;
+	width: 10%;
+	height: 20%;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
 
-  &:hover {
-    opacity: 1;
-  }
+	&:hover {
+		opacity: 1;
+	}
 }
 
 .carouselcontrolprevious {
-  left: 0;
-  justify-content: flex-start;
+	left: 0;
+	justify-content: flex-start;
 }
 
 .carouselcontrolnext {
-  right: 0;
-  justify-content: flex-end;
+	right: 0;
+	justify-content: flex-end;
 }
 
 .carouselcontrolicon {
-  display: block;
-  width: $icon-size;
-  height: $icon-size;
-  margin: 0 1em;
-  filter: $drop-shadow-dark;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: $icon-size $icon-size;
-  transition: background-color $transition-panel;
+	display: block;
+	width: $icon-size;
+	height: $icon-size;
+	margin: 0 1em;
+	filter: $drop-shadow-dark;
+	mask-repeat: no-repeat;
+	mask-position: center;
+	mask-size: $icon-size $icon-size;
+	transition: background-color $transition-panel;
 }
 
 nav.carouseldots {
-  position: absolute;
-  right: 1em;
-  bottom: 1em;
-  z-index: 5;
-  display: flex;
-  gap: 10px;
+	position: absolute;
+	right: 1em;
+	bottom: 1em;
+	z-index: 5;
+	display: flex;
+	gap: 10px;
 }
 
 .carouseldot {
-  position: relative;
-  width: $icon-size;
-  height: $icon-size;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: rgba($surface, 0.25);
-  cursor: pointer;
-  transition: opacity $transition-panel, background-color $transition-panel;
+	position: relative;
+	width: $icon-size;
+	height: $icon-size;
+	padding: 0;
+	border: 0;
+	border-radius: 50%;
+	background: rgba($surface, 0.25);
+	cursor: pointer;
+	transition: opacity $transition-panel, background-color $transition-panel;
 
-  &:hover {
-    opacity: 0.75;
-  }
+	&:hover {
+		opacity: 0.75;
+	}
 
-  &.is-active .carouseldotprogress {
-    opacity: 1;
-  }
+	&.is-active .carouseldotprogress {
+		opacity: 1;
+	}
 
-  &.is-exiting .carouseldotprogress {
-    opacity: 0;
-  }
+	&.is-exiting .carouseldotprogress {
+		opacity: 0;
+	}
 }
 
 .carouseldotprogress {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: conic-gradient($surface calc(var(--carousel-progress, 1) * 1turn),
-      rgba($surface, 0) 0);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity $transition-panel;
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	background: conic-gradient(
+		$surface calc(var(--carousel-progress, 1) * 1turn),
+		rgba($surface, 0) 0
+	);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity $transition-panel;
 }
 
 #sidebar {
-  display: flex;
-  flex-shrink: 0;
-  flex-direction: column;
-  gap: 8px;
-  width: $sidebar-width;
-  background: url("/assets/img/bg.webp"), $sidebar;
-  color: $surface;
-  text-shadow: $text-shadow-dark;
+	display: flex;
+	flex-shrink: 0;
+	flex-direction: column;
+	gap: 8px;
+	width: $sidebar-width;
+	background: url("/assets/img/bg.webp"), $sidebar;
+	color: $surface;
+	text-shadow: $text-shadow-dark;
 }
 
 .sidebarsection {
-  background: $page;
-  box-shadow: $shadow-low;
+	background: $page;
+	box-shadow: $shadow-low;
 
-  h1 {
-    margin: 6px 0;
-    font-family: $font-code;
-    font-size: 1em;
-  }
+	h1 {
+		margin: 6px 0;
+		font-family: $font-code;
+		font-size: 1em;
+	}
 
-  hr {
-    background: $rule-strong;
-    filter: $drop-shadow-dark;
-  }
+	hr {
+		background: $rule-strong;
+		filter: $drop-shadow-dark;
+	}
 
-  p {
-    margin: 8px 0;
-    font-size: 12px;
-  }
+	p {
+		margin: 8px 0;
+		font-size: 12px;
+	}
 }
 
 .sidebarsectionpaddedcontent {
-  padding: 0 10px;
+	padding: 0 10px;
 }
 
 .sidelink {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  overflow: hidden;
-  background: $sidelink-gradient;
-  color: $text;
-  box-shadow: $shadow-inset-light;
-  text-shadow: $text-shadow-light;
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 10px;
+	overflow: hidden;
+	background: $sidelink-gradient;
+	color: $text;
+	box-shadow: $shadow-inset-light;
+	text-shadow: $text-shadow-light;
 
-  &::before,
-  &::after {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    content: "";
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity $transition-fade;
-  }
+	&::before,
+	&::after {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		content: "";
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity $transition-fade;
+	}
 
-  &::before {
-    background: $sidelink-hover-gradient;
-    box-shadow: $shadow-inset-light;
-  }
+	&::before {
+		background: $sidelink-hover-gradient;
+		box-shadow: $shadow-inset-light;
+	}
 
-  &::after {
-    background: $sidelink-active-gradient;
-    box-shadow: $shadow-inset-light;
-  }
+	&::after {
+		background: $sidelink-active-gradient;
+		box-shadow: $shadow-inset-light;
+	}
 
-  >* {
-    position: relative;
-    z-index: 1;
-    transition: opacity $transition-fade;
-  }
+	> * {
+		position: relative;
+		z-index: 1;
+		transition: opacity $transition-fade;
+	}
 
-  img {
-    width: $icon-size;
-    user-select: none;
-    filter: $drop-shadow-light;
-    image-rendering: pixelated;
-  }
+	img {
+		width: $icon-size;
+		user-select: none;
+		filter: $drop-shadow-light;
+		image-rendering: pixelated;
+	}
 
-  &:hover {
-    opacity: 1;
+	&:hover {
+		opacity: 1;
 
-    &::before {
-      opacity: 1;
-    }
+		&::before {
+			opacity: 1;
+		}
 
-    &:not(:active)>* {
-      opacity: 0.75;
-    }
-  }
+		&:not(:active) > * {
+			opacity: 0.75;
+		}
+	}
 
-  &:active {
-    &::before {
-      opacity: 0;
-    }
+	&:active {
+		&::before {
+			opacity: 0;
+		}
 
-    &::after {
-      opacity: 1;
-    }
-  }
+		&::after {
+			opacity: 1;
+		}
+	}
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1em;
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 1em;
 }
 
 .laurelae {
-  display: grid;
-  grid-template-rows: repeat(3, 2em);
-  grid-template-columns: 2em 1fr;
-  color: $surface;
-  filter: $drop-shadow-low;
-  text-shadow: $text-shadow-dark;
+	display: grid;
+	grid-template-rows: repeat(3, 2em);
+	grid-template-columns: 2em 1fr;
+	color: $surface;
+	filter: $drop-shadow-low;
+	text-shadow: $text-shadow-dark;
 
-  img {
-    grid-row: 1;
-    grid-column: 1;
-    width: 2em;
-    height: 2em;
-  }
+	img {
+		grid-row: 1;
+		grid-column: 1;
+		width: 2em;
+		height: 2em;
+	}
 
-  .laurelaename {
-    grid-row: 1;
-    grid-column: 2;
-    font-weight: 600;
-  }
+	.laurelaename {
+		grid-row: 1;
+		grid-column: 2;
+		font-weight: 600;
+	}
 
-  .laurelaespecies {
-    grid-row: 2;
-    grid-column: 2;
-    font-style: italic;
-  }
+	.laurelaespecies {
+		grid-row: 2;
+		grid-column: 2;
+		font-style: italic;
+	}
 
-  >a {
-    grid-row: 3;
-    grid-column: 2;
-  }
+	> a {
+		grid-row: 3;
+		grid-column: 2;
+	}
 
-  .laurelaename,
-  .laurelaespecies,
-  >a {
-    display: flex;
-    align-items: center;
-    padding: 0 0.5em;
-    background: $page;
-  }
+	.laurelaename,
+	.laurelaespecies,
+	> a {
+		display: flex;
+		align-items: center;
+		padding: 0 0.5em;
+		background: $page;
+	}
 
-  .laurelaename,
-  .laurelaespecies {
-    border-bottom: 1px solid $rule-strong;
-  }
+	.laurelaename,
+	.laurelaespecies {
+		border-bottom: 1px solid $rule-strong;
+	}
 }
 
 .entry {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
-  a {
-    font-weight: 600;
-  }
+	a {
+		font-weight: 600;
+	}
 }
 
 #buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 4px;
-  margin: 0.75em 0;
-  filter: $drop-shadow-low;
-  image-rendering: pixelated;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 4px;
+	margin: 0.75em 0;
+	filter: $drop-shadow-low;
+	image-rendering: pixelated;
 
-  a {
-    width: 88px;
-    height: 31px;
-  }
+	a {
+		width: 88px;
+		height: 31px;
+	}
 }
 
 h1.notice,
 .addendum {
-  margin: 0.25em 0;
-  font-weight: 400;
-  letter-spacing: -1px;
+	margin: 0.25em 0;
+	font-weight: 400;
+	letter-spacing: -1px;
 
-  .mono {
-    font-weight: 600;
-    letter-spacing: -3px;
-  }
+	.mono {
+		font-weight: 600;
+		letter-spacing: -3px;
+	}
 
-  .separator {
-    color: $separator;
-  }
+	.separator {
+		color: $separator;
+	}
 }
 
 .mono {
-  font-family: $font-code;
+	font-family: $font-code;
 }
 
 .note {
-  color: $muted;
-  font-weight: 400;
+	color: $muted;
+	font-weight: 400;
 }
 
 img.aboutphoto {
-  float: left;
-  width: auto;
-  height: 128px;
-  margin: 0 0.75em 0 0;
+	float: left;
+	width: auto;
+	height: 128px;
+	margin: 0 0.75em 0 0;
 }
 
 .litts {
-  max-width: 480px;
-  filter: $drop-shadow-light;
+	max-width: 480px;
+	filter: $drop-shadow-light;
 }
 
 #nope {
-  display: flex;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 5em;
-  user-select: none;
+	display: flex;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 5em;
+	user-select: none;
 }
 
 @media (max-width: 640px) {
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+	.grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
 
-  .homepage .contentcontainer {
-    flex-direction: column-reverse;
-  }
+	.homepage .contentcontainer {
+		flex-direction: column-reverse;
+	}
 
-  #carouselcontainer img {
-    aspect-ratio: 3 / 2;
-  }
+	#carouselcontainer img {
+		aspect-ratio: 3 / 2;
+	}
 
-  #sidebar {
-    width: 100%;
-  }
+	#sidebar {
+		width: 100%;
+	}
 }
 
 @media (max-width: 640px) and (orientation: portrait) {
-  .carouselcontrol,
-  nav.carouseldots {
-    display: none;
-  }
+	.carouselcontrol,
+	nav.carouseldots {
+		display: none;
+	}
 }
