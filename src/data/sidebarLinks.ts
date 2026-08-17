@@ -33,9 +33,9 @@ export const sidebarLinks: SidebarLink[] = [
 		label: "Bandcamp",
 	},
 	{
-		href: "https://git.gay/kit",
-		icon: "/assets/img/icons/git.svg",
-		label: "git.gay",
+		href: "https://tangled.org/llia.cc",
+		icon: "/assets/img/icons/tangled.svg",
+		label: "Tangled",
 	},
 	{
 		href: "https://bsky.app/profile/did:plc:3a2h6y4tkr3joxwbtner5sve",
