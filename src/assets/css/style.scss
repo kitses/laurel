@@ -607,6 +607,11 @@ nav.carouseldots {
 	display: flex;
 	flex-direction: column;
 
+	h2 {
+		font: inherit;
+		margin: 0;
+	}
+
 	a {
 		font-weight: 600;
 	}

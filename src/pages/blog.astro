@@ -25,7 +25,7 @@ const posts = (await getCollection("posts")).sort(
                 &middot;
                 <span>{post.data.author}</span>
               </span>
-              <a href={`/posts/${post.id}/`}>"{post.data.title}"</a>
+              <h2><a href={`/posts/${post.id}/`}>"{post.data.title}"</a></h2>
               <span>{post.data.description}</span>
             </div>
           ))
