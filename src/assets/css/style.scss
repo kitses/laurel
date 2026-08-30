@@ -693,6 +693,13 @@ img.aboutphoto {
 		aspect-ratio: 3 / 2;
 	}
 
+	.carouseltext,
+	header .info {
+		h1 {
+			font-size: 2em;
+		}
+	}
+
 	#sidebar {
 		width: 100%;
 	}
