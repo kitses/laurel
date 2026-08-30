@@ -40,10 +40,12 @@ export default function HomeCarousel({ posts }: HomeCarouselProps) {
 	} | null>(null);
 	const [elapsedMs, setElapsedMs] = useState(0);
 	const [hovered, setHovered] = useState(false);
+	const [focused, setFocused] = useState(false);
 	const [locked, setLocked] = useState(false);
+	const [reducedMotion, setReducedMotion] = useState(false);
 
 	const activePost = posts[activeIndex];
-	const isPaused = hovered || locked;
+	const isPaused = hovered || focused || locked;
 	const remainingProgress = Math.max(0, 1 - elapsedMs / advanceMs);
 
 	const stateRef = useRef({ activeIndex, elapsedMs });
@@ -79,7 +81,7 @@ export default function HomeCarousel({ posts }: HomeCarouselProps) {
 	};
 
 	useEffect(() => {
-		if (posts.length <= 1) return;
+		if (posts.length <= 1 || reducedMotion) return;
 
 		let frame: number;
 		let lastTime: number | undefined;
@@ -107,7 +109,16 @@ export default function HomeCarousel({ posts }: HomeCarouselProps) {
 		frame = window.requestAnimationFrame(tick);
 
 		return () => window.cancelAnimationFrame(frame);
-	}, [isPaused, posts.length]);
+	}, [isPaused, reducedMotion, posts.length]);
+
+	useEffect(() => {
+		const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+		setReducedMotion(query.matches);
+		const handleChange = (event: MediaQueryListEvent) =>
+			setReducedMotion(event.matches);
+		query.addEventListener("change", handleChange);
+		return () => query.removeEventListener("change", handleChange);
+	}, []);
 
 	useEffect(() => {
 		return () => clearTimeout(transitionTimeoutRef.current);
@@ -171,6 +182,13 @@ export default function HomeCarousel({ posts }: HomeCarouselProps) {
 			onTouchStart={handleTouchStart}
 			onTouchEnd={handleTouchEnd}
 			onClickCapture={handleClickCapture}
+			onFocusIn={() => setFocused(true)}
+			onFocusOut={(event) => {
+				const next = event.relatedTarget;
+				if (!(next instanceof Node) || !event.currentTarget.contains(next)) {
+					setFocused(false);
+				}
+			}}
 			onMouseLeave={() => {
 				setHovered(false);
 				setLocked(false);
