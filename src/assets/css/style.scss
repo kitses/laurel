@@ -160,6 +160,16 @@ main {
 
 	ul {
 		margin: 0.75em 0 0;
+		padding-inline-start: 2.5em;
+		display: flex;
+		flex-direction: column;
+		gap: 0.25em;
+	}
+
+	blockquote {
+	    border-inline-start: 0.25em solid $muted;
+	    padding: 0 0 0 1em;
+	    margin: 0;
 	}
 
 	details {
@@ -649,13 +659,18 @@ h1.notice,
 	}
 }
 
-.mono {
+.mono,
+code {
 	font-family: $font-code;
 }
 
 .note {
 	color: $muted;
 	font-weight: 400;
+}
+
+.italic {
+	font-style: italic;
 }
 
 img.aboutphoto {
