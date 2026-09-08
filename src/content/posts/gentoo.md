@@ -38,7 +38,7 @@ If I got told the number of atoms the average Gentoo user has in their `package.
 
 A sysadmin is fundamentally driven by an immeasurable amount of lust to maintain a \*nix system, even putting their computer and mental state in harm's way to get what they want. Gentoo caters to this due to the aforementioned, and will happily birth dysfunctional systems that take months to maintain and years to `-avuDN @world` once the time comes, because this is nerd LEGO.
 
-What I have failed to mention is that Gentoo is fundamentally a meta-distribution, with the fact that both distro and user are what shapes the system they install, stage3 and all. And retroactively, regretfully, because if one thing in their Rube Goldberg castle breaks, everything is soon to follow from the top-down. USE flags make this even more of a problem, as even one small change to a package's setup can trip over, or possibly ruin one's delicately crafted setup in one emerge. Any of the means that the user has demanded Portage to build is only instant gratification, and what causes the rest.
+What I have failed to mention is that Gentoo is fundamentally a meta-distribution, with the fact that both distro and user are what shapes the system they install, stage3 and all. And retroactively, regretfully, because if one thing in their Rube Goldberg castle breaks, everything is soon to follow from the top-down. USE flags make this even more of a problem, as even one small change to a package's set can trip over, or possibly ruin one's delicately crafted setup in one emerge. Any of the means that the user has demanded Portage to build is only instant gratification, and what causes the rest.
 
 # Ludditism
 
