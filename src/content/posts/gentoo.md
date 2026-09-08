@@ -80,7 +80,7 @@ But such is the nature of proselytization:
 > - The advertising and use of AI models has caused a significant harm to employees and reduction of service quality. <span class="note italic">[how does this pertain to the Project meaningfully?]</span>
 > - LLMs have been empowering all kinds of spam and scam efforts. <span class="note italic">[ditto]</span>
 
-We begin to grow ever-distant from "FLOSS" as a whole, because how do you proceed to promote "free knowledge" while simultaneously preaching copyright law and the abhorrent act of "stealing work", because you've decided to make AI your political polarizer? I do not have the want of abolishing copyright law, but how many times will you repeat this rhetoric until you start alienating the people you wish to "empower"?
+We begin to grow ever-distant from "FLOSS" as a whole, because how do you proceed to promote "free knowledge" while simultaneously preaching copyright law and the abhorrent act of "stealing work", because you've decided to make AI your political polarizer? I do not have the want of abolishing copyright law, nor the erasure of human labour, but how many times will you repeat this rhetoric until you start alienating the people you wish to "empower"?
 
 Language models are, fundamentally, given a large enough set, melting pots of their training data, and will never output or "regurgitate" a full body of work in daily use near-verbatim if it isn't already a substantially popular work. Source code isn't substantially popular, and does not stay static.
 
