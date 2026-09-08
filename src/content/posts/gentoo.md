@@ -7,7 +7,7 @@ feature_image: /assets/img/feature/gentoo.avif
 ---
 We have a "storied" experience with Linux, starting with whatever was box-standard at the start of `CURRENT_DECADE`, and currently with Fedora. One of those distributions was Gentoo, a (now mostly) source-based distribution initially released in 2002 by known weed-smoker and crashout _Daniel Robbins_.
 
-The idea was novel, concerning the small breadth of programs available and the relative speed of computers at the time: the prospect that you can compile software with settings meant for your hardware for a speed gain. This also inadvertently includes being able to easily support ISAs other than x86, within the Gentoo project (the "Project")'s available resources.
+The idea was novel, concerning the small breadth of programs available and the relative speed of computers at the time: the prospect that you can compile software with settings meant for your hardware for a speed gain. This inadvertently also includes being able to easily support ISAs other than x86, within the Gentoo project (the "Project")'s available resources.
 
 This advantage, however, has largely disappeared with the sub-recent technological advancements in CPUs and the compilers that build what runs on them, because it isn't <2015 anymore.
 
