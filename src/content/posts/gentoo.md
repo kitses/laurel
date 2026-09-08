@@ -110,6 +110,6 @@ With that twisted worldview, we thought it'd quell all of our problems; to which
 
 ---
 
-Nothing is learned, gained, or lost, for every canary used to divine this coalmine, because we'll be sick if we have to breathe its air again. I am not grateful, nor do I beg for the manual labour of these bastard computer-touchers, for it would be just as saccharine if we stopped using Linux, started living in the woods, and blamed all of our problems on some random big-name like rms.
+Nothing is learned, gained, or lost, for every canary used to divine this coal mine, because we'll be sick if we have to breathe its air again. I am not grateful, nor do I beg for the manual labour of these bastard computer-touchers, for it would be just as saccharine if we stopped using Linux, started living in the woods, and blamed all of our problems on some random big-name like rms.
 
 I'm too sure of myself, aren't I.
