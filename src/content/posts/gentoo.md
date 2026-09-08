@@ -94,7 +94,7 @@ I don't think this can be answered or solved with a remotely straight face, beca
 
 ## Security
 
-Vulnerabilities are being found at an unprecedented rate and quality due to the advent of agentic tools such as [AISLE](https://aisle.com/), Codex, and frontier models such as [GLM-5.3](https://z.ai/blog/glm-5.3), [Kimi K3](https://www.kimi.ai/blog/kimi-k3), and, more recently, [GPT-6 Astra](https://openai.com/index/gpt-6-astra/). Used by a human operator, if one of these finds an exploitable vulnerability in something like Portage, which is then responsibly disclosed to the Project with a LLM-generated fix included, they cannot include it verbatim\* because of their own policy, possibly opening up an infinite can of worms for the distribution's users.
+Vulnerabilities are being found at an unprecedented rate and quality due to the advent of agentic tools such as [AISLE](https://aisle.com/), Codex, and frontier models such as [GLM-5.3](https://z.ai/blog/glm-5.3), [Kimi K3](https://www.kimi.ai/blog/kimi-k3), and, more recently, [GPT-6 Astra](https://openai.com/index/gpt-6-astra/). Used by a human operator, if one of these finds an exploitable vulnerability in something like Portage, which is then responsibly disclosed to the Project with a LLM-generated fix included, they wouldn't be able to include it verbatim\* because of their own policy, possibly opening up an infinite can of worms for the distribution's users.
 
 For this reason, we outright refuse to use any Linux distribution that prohibits the use of language models in development, for bad omens would certainly be running amok in the current day.
 
