@@ -17,12 +17,6 @@ export const sidebarLinks: SidebarLink[] = [
 		label: "Twitter",
 	},
 	{
-		href: "https://chitter.xyz/@i",
-		icon: "/assets/img/icons/activitypub.svg",
-		label: "ActivityPub",
-		rel: "me",
-	},
-	{
 		href: "https://last.fm/user/flttr",
 		icon: "/assets/img/icons/lastfm.svg",
 		label: "last.fm",
@@ -36,6 +30,12 @@ export const sidebarLinks: SidebarLink[] = [
 		href: "https://tangled.org/llia.cc",
 		icon: "/assets/img/icons/tangled.svg",
 		label: "Tangled",
+	},
+	{
+		href: "https://chitter.xyz/@i",
+		icon: "/assets/img/icons/activitypub.svg",
+		label: "ActivityPub",
+		rel: "me",
 	},
 	{
 		href: "https://bsky.app/profile/did:plc:3a2h6y4tkr3joxwbtner5sve",
