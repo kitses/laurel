@@ -15,13 +15,6 @@ export const systemMembers: SystemMember[] = [
 		website: "ivy.llia.cc",
 	},
 	{
-		url: "https://aspen.llia.cc",
-		displayName: "Aspen Purcell",
-		icon: "/assets/img/laurelae/aspen.svg",
-		species: "Fox, Glaceon",
-		website: "aspen.llia.cc",
-	},
-	{
 		url: "https://flora.llia.cc",
 		displayName: "Flora Novak",
 		icon: "/assets/img/laurelae/flora.avif",
