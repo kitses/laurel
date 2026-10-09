@@ -17,18 +17,18 @@
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.10",
-		"@astrojs/markdown-remark": "7.2.4",
-		"@astrojs/mdx": "7.0.8",
-		"@astrojs/preact": "6.0.4",
-		"@biomejs/biome": "^2.5.10",
-		"@napi-rs/canvas": "^1.0.8",
-		"astro": "7.2.9",
+		"@astrojs/markdown-remark": "7.3.2",
+		"@astrojs/mdx": "8.0.3",
+		"@astrojs/preact": "6.0.6",
+		"@biomejs/biome": "^2.5.15",
+		"@napi-rs/canvas": "^1.0.10",
+		"astro": "7.3.7",
 		"astro-compress": "^2.4.3",
-		"preact": "^10.29.8",
+		"preact": "^11.0.1",
 		"rehype-external-links": "^3.0.0",
-		"sass-embedded": "^1.103.1",
+		"sass-embedded": "^1.105.1",
 		"typescript": "^7.0.2",
 		"wcag-contrast": "^3.0.0",
-		"wrangler": "^4.127.0"
+		"wrangler": "^4.148.0"
 	}
 }
