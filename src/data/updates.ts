@@ -9,11 +9,11 @@ export const updates: Update[] = [
 		text: "move to pnpm because deno died",
 	},
 	{
-		date: "2025-11-05",
-		text: "move to deno for building and remove github link due to obsolescence",
+		date: "2026-05-14",
+		text: "overhaul website layout",
 	},
 	{
-		date: "2025-05-14",
-		text: "overhaul website layout",
+		date: "2025-11-05",
+		text: "move to deno for building and remove github link due to obsolescence",
 	},
 ];
