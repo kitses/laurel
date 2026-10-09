@@ -5,6 +5,7 @@ author: Aerith Frye
 date: 2026-09-07
 feature_image: /assets/img/feature/gentoo.avif
 ---
+
 We have a "storied" experience with Linux, starting with whatever was box-standard at the start of `CURRENT_DECADE`, and currently with Fedora. One of those distributions was Gentoo, a (now mostly) source-based distribution initially released in 2002 by known weed-smoker and crashout _Daniel Robbins_.
 
 The idea was novel, concerning the small breadth of programs available and the relative speed of computers at the time: the prospect that you can compile software with settings meant for your hardware for a speed gain. This inadvertently also includes being able to easily support ISAs other than x86, within the Gentoo project (the "Project")'s available resources.
@@ -12,7 +13,6 @@ The idea was novel, concerning the small breadth of programs available and the r
 This advantage, however, has largely disappeared with the sub-recent technological advancements in CPUs and the compilers that build what runs on them, because it isn't <2015 anymore.
 
 Between programmatic inefficiency, compilers, and raw speed, the gap is actively, and rapidly, closing\*, because all things are temporary solutions in the moment, regardless of one's faith or active reversal of progress.
-
 
 <span class="note">
 <span class="mono">*</span> <a href="https://www.phoronix.com/news/GCC-x86-Generic-Mispredict">One Line x86 Change To GCC Compiler Nets +12% Benchmark Win For Modern Intel/AMD CPUs</a> (Phoronix)
@@ -75,6 +75,7 @@ It is a valid conversation to not allow them due to member burden or potential c
 But such is the nature of proselytization:
 
 > **Ethical concerns.** The business side of AI boom <span class="note italic">[sic]</span> is creating serious ethical concerns. Among them:
+>
 > - Commercial AI projects are frequently indulging in blatant copyright violations to train their models. <span class="note italic">[the only actual argument here, if by little]</span>
 > - Their operations are causing concerns about the huge use of energy and water. <span class="note italic">[you need citations that are based on **actual numbers** (see last paragraph)]</span>
 > - The advertising and use of AI models has caused a significant harm to employees and reduction of service quality. <span class="note italic">[how does this pertain to the Project meaningfully?]</span>

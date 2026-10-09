@@ -167,9 +167,9 @@ main {
 	}
 
 	blockquote {
-	    border-inline-start: 0.25em solid $muted;
-	    padding: 0 0 0 1em;
-	    margin: 0;
+		border-inline-start: 0.25em solid $muted;
+		padding: 0 0 0 1em;
+		margin: 0;
 	}
 
 	details {
@@ -427,7 +427,9 @@ nav.carouseldots {
 	border-radius: 50%;
 	background: rgba($surface, 0.25);
 	cursor: pointer;
-	transition: opacity $transition-panel, background-color $transition-panel;
+	transition:
+		opacity $transition-panel,
+		background-color $transition-panel;
 
 	&:hover {
 		opacity: 0.75;
