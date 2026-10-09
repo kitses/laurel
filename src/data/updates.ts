@@ -16,4 +16,4 @@ export const updates: Update[] = [
 		date: "2025-11-05",
 		text: "move to deno for building and remove github link due to obsolescence",
 	},
-];
+].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
