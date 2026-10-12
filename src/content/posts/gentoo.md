@@ -74,7 +74,7 @@ It is a valid conversation to not allow them due to member burden or potential c
 
 But such is the nature of proselytization:
 
-> **Ethical concerns.** The business side of AI boom <span class="note italic">[sic]</span> is creating serious ethical concerns. Among them:
+> **Ethical concerns.** The business side of AI boom <span class="note italic">[sic]</span> is creating serious ethical concerns. Among them:
 >
 > - Commercial AI projects are frequently indulging in blatant copyright violations to train their models. <span class="note italic">[the only actual argument here, if by little]</span>
 > - Their operations are causing concerns about the huge use of energy and water. <span class="note italic">[you need citations that are based on **actual numbers** (see last paragraph)]</span>
