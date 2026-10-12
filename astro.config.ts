@@ -19,7 +19,9 @@ export default defineConfig({
 			Image: false,
 			SVG: false,
 			HTML: {
-				collapseWhitespace: true,
+				"html-minifier-terser": {
+					collapseWhitespace: true,
+				},
 			},
 		}),
 	],
