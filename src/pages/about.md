@@ -25,8 +25,8 @@ For more personal information on us as a system, go to [system](/system/). Other
     <strong>Text Editors</strong>
     <ul>
       <li><a href="https://www.gnu.org/software/emacs/">GNU Emacs</a></li>
-      <li><a href="https://vscodium.com/">VSCodium</a></li>
       <li><a href="https://helix-editor.com/">Helix</a></li>
+      <li><a href="https://zed.dev/">Zed</a></li>
     </ul>
   </div>
   <div>
