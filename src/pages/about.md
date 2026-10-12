@@ -5,7 +5,7 @@ title: About
 
 # who are y'all, sickos?
 
-<img src="/assets/img/laurelphoto.avif" alt="" class="aboutphoto" />
+<img alt src="/assets/img/laurelphoto.avif" alt="" class="aboutphoto" />
 
 **Laurel** is a plural system of musicians, graphic designers, developers, and creatures from the United States of America, puppeting **Kit Sylvester**. We mainly publish music on [SoundCloud](https://soundcloud.com/x5t), with any unfinished things possibly landing on the [archive](https://soundcloud.com/8vd). Any other hobbies we somehow take up are out of chance.
 
