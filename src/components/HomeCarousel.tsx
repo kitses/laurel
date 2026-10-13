@@ -1,4 +1,3 @@
-import type { JSX } from "preact";
 import { useEffect, useRef, useState } from "preact/hooks";
 
 type CarouselPost = {
@@ -135,14 +134,14 @@ export default function HomeCarousel({ posts }: HomeCarouselProps) {
 		typeof window !== "undefined" &&
 		window.matchMedia(mobilePortraitQuery).matches;
 
-	const handleTouchStart = (event: JSX.TargetedTouchEvent<HTMLElement>) => {
+	const handleTouchStart = (event: TouchEvent) => {
 		if (!canSwipe()) return;
 
 		const touch = event.touches[0];
 		touchStartRef.current = { x: touch.clientX, y: touch.clientY };
 	};
 
-	const handleTouchEnd = (event: JSX.TargetedTouchEvent<HTMLElement>) => {
+	const handleTouchEnd = (event: TouchEvent) => {
 		const touchStart = touchStartRef.current;
 		touchStartRef.current = null;
 
@@ -167,7 +166,7 @@ export default function HomeCarousel({ posts }: HomeCarouselProps) {
 		);
 	};
 
-	const handleClickCapture = (event: JSX.TargetedMouseEvent<HTMLElement>) => {
+	const handleClickCapture = (event: MouseEvent) => {
 		if (!swipedRef.current) return;
 
 		swipedRef.current = false;
@@ -278,14 +277,12 @@ export default function HomeCarousel({ posts }: HomeCarouselProps) {
 							>
 								<span
 									className="carouseldotprogress"
-									style={
-										{
-											"--carousel-progress":
-												index === activeIndex
-													? remainingProgress
-													: (exiting?.progress ?? 0),
-										} as JSX.CSSProperties
-									}
+									style={{
+										"--carousel-progress":
+											index === activeIndex
+												? remainingProgress
+												: (exiting?.progress ?? 0),
+									}}
 								/>
 							</button>
 						))}

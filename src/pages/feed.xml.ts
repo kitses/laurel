@@ -1,5 +1,6 @@
 import { createMarkdownProcessor } from "@astrojs/markdown-remark";
 import rehypeExternalLinks from "rehype-external-links";
+import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
 
 const xmlEscape = (value: string) =>
@@ -9,7 +10,7 @@ const xmlEscape = (value: string) =>
 		.replaceAll(">", "&gt;")
 		.replaceAll('"', "&quot;");
 
-export async function GET(context) {
+export const GET: APIRoute = async (context) => {
 	const processor = await createMarkdownProcessor({
 		smartypants: false,
 		syntaxHighlight: false,
@@ -21,6 +22,7 @@ export async function GET(context) {
 		(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 	);
 	const site = context.site;
+	if (!site) throw new Error("Polly wants a cracker?");
 	const feedUrl = new URL("feed.xml", site);
 	const entries = await Promise.all(
 		posts.map(async (post) => {
@@ -67,4 +69,4 @@ ${entries
 	return new Response(xml, {
 		headers: { "Content-Type": "application/atom+xml; charset=utf-8" },
 	});
-}
+};
