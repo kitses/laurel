@@ -175,7 +175,6 @@ export default function HomeCarousel({ posts }: HomeCarouselProps) {
 	};
 
 	return (
-		// oxlint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
 		<section
 			id="carouselcontainer"
 			aria-label="Featured posts carousel"
