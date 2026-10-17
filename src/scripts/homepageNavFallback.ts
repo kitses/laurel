@@ -8,10 +8,19 @@ if (nav && !scrollTimelineSupported) {
 	const rangeStart = 35 * fontSize - 128;
 	const rangeEnd = 35 * fontSize - 24;
 
+	let frame: number | null = null;
+
 	const updateProgress = () => {
-		const fraction = (window.scrollY - rangeStart) / (rangeEnd - rangeStart);
-		const progress = Math.min(1, Math.max(0, fraction));
-		nav.style.setProperty("--homepage-nav-progress", String(progress));
+		if (frame !== null) {
+			return;
+		}
+
+		frame = requestAnimationFrame(() => {
+			frame = null;
+			const fraction = (window.scrollY - rangeStart) / (rangeEnd - rangeStart);
+			const progress = Math.min(1, Math.max(0, fraction));
+			nav.style.setProperty("--homepage-nav-progress", String(progress));
+		});
 	};
 
 	window.addEventListener("scroll", updateProgress, { passive: true });
