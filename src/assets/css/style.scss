@@ -222,10 +222,19 @@ main.homepage {
 		margin-bottom: -2.5em;
 		background: $page-veil;
 		box-shadow: none;
-		animation-name: homepagenav;
-		animation-fill-mode: both;
-		animation-timeline: scroll(root block);
-		animation-range: calc(35em - 128px) calc(35em - 24px);
+
+		@supports (animation-timeline: scroll(root block)) and (animation-range: normal) {
+			animation-name: homepagenav;
+			animation-fill-mode: both;
+			animation-timeline: scroll(root block);
+			animation-range: calc(35em - 128px) calc(35em - 24px);
+		}
+
+		@supports not ((animation-timeline: scroll(root block)) and (animation-range: normal)) {
+			--homepage-nav-progress: 0;
+			background: color-mix(in srgb, $page calc(50% + 50% * var(--homepage-nav-progress)), transparent);
+			box-shadow: color-mix(in srgb, #000 calc(50% * var(--homepage-nav-progress)), transparent) 0 calc(1px * var(--homepage-nav-progress)) calc(2px * var(--homepage-nav-progress));
+		}
 	}
 
 	.content {
