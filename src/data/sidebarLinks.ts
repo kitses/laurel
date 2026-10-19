@@ -32,6 +32,11 @@ export const sidebarLinks: SidebarLink[] = [
 		label: "Tangled",
 	},
 	{
+		href: "https://github.com/kitses",
+		icon: "/assets/img/icons/github.svg",
+		label: "GitHub",
+	},
+	{
 		href: "https://bsky.app/profile/did:plc:3a2h6y4tkr3joxwbtner5sve",
 		icon: "/assets/img/icons/bluesky.svg",
 		label: "Bluesky",
