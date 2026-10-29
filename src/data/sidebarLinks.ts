@@ -27,11 +27,6 @@ export const sidebarLinks: SidebarLink[] = [
 		label: "Bandcamp",
 	},
 	{
-		href: "https://tangled.org/llia.cc",
-		icon: "/assets/img/icons/tangled.svg",
-		label: "Tangled",
-	},
-	{
 		href: "https://github.com/kitses",
 		icon: "/assets/img/icons/github.svg",
 		label: "GitHub",
