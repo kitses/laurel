@@ -51,7 +51,13 @@ const renderedNotices = await Promise.all(
       <div class="content">
         {
           renderedNotices.map((notice) => (
-            <>
+            <div
+              class={
+                notice.type === "event"
+                  ? "noticeitem eventnotice"
+                  : "noticeitem"
+              }
+            >
               {notice.type === "opus" ? (
                 notice.first ? (
                   <>
@@ -89,7 +95,7 @@ const renderedNotices = await Promise.all(
                 </>
               )}
               <notice.Content />
-            </>
+            </div>
           ))
         }
       </div>

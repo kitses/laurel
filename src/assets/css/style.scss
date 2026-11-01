@@ -238,7 +238,24 @@ main.homepage {
 	}
 
 	.content {
+		padding: 0;
 		box-shadow: $shadow-content;
+	}
+
+	.noticeitem {
+		padding: 0 1em;
+
+		&.eventnotice {
+			background: #444;
+			color: $surface;
+			overflow: hidden;
+			text-shadow: $text-shadow-dark;
+
+			hr {
+				background: $rule-strong;
+				filter: $drop-shadow-dark;
+			}
+		}
 	}
 }
 
