@@ -69,6 +69,15 @@ const renderedNotices = await Promise.all(
                     {notice.displayDate}
                   </h2>
                 )
+              ) : notice.type === "event" ? (
+                <>
+                  <h1 class="notice">
+                    <span class="mono">event</span>{" "}
+                    <span class="separator">::</span>{" "}
+                    {notice.displayDate}
+                  </h1>
+                  <hr />
+                </>
               ) : (
                 <>
                   <h1 class="notice">

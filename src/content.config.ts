@@ -5,7 +5,7 @@ import { glob } from "astro/loaders";
 const notices = defineCollection({
 	loader: glob({ pattern: "**/*.md", base: "./src/content/notices" }),
 	schema: z.object({
-		type: z.enum(["notice", "opus"]).default("notice"),
+		type: z.enum(["notice", "opus", "event"]).default("notice"),
 	}),
 });
 

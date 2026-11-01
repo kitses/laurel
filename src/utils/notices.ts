@@ -47,7 +47,7 @@ export function formatDate(noticeDate: Date): string {
 
 export interface DecoratedNotice {
 	post: NoticeEntry;
-	type: "notice" | "opus";
+	type: "notice" | "opus" | "event";
 	displayDate: string;
 	prefix?: string;
 	first?: boolean;
@@ -69,7 +69,7 @@ export function decorateNotices(noticePosts: NoticeEntry[]): DecoratedNotice[] {
 		.map(({ postEntry, noticeType, parsedDate }, index, array) => {
 			const decoratedNotice: DecoratedNotice = {
 				post: postEntry,
-				type: noticeType as "notice" | "opus",
+				type: noticeType as "notice" | "opus" | "event",
 				displayDate: formatDate(parsedDate),
 			};
 
