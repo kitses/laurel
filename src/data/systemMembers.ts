@@ -8,17 +8,10 @@ export interface SystemMember {
 
 export const systemMembers: SystemMember[] = [
 	{
-		url: "https://ivy.llia.cc",
-		displayName: "Ivy Ninine",
-		icon: "/assets/img/laurelae/ivy.svg",
-		species: "Rabbit, Cat",
-		website: "ivy.llia.cc",
-	},
-	{
 		url: "https://flora.llia.cc",
 		displayName: "Flora Novak",
 		icon: "/assets/img/laurelae/flora.avif",
-		species: "Avali",
+		species: "Glaceon, Avali",
 		website: "flora.llia.cc",
 	},
 	{
