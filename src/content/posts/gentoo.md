@@ -1,7 +1,7 @@
 ---
 title: Grievances with Gentoo
 description: Riffing on about ideology unhealthily.
-author: Aerith Frye
+author: Pazzy Ninine
 date: 2026-09-07
 feature_image: /assets/img/feature/gentoo.avif
 ---
