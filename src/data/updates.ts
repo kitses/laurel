@@ -5,15 +5,15 @@ export interface Update {
 
 export const updates: Update[] = [
 	{
+		date: "2026-11-03",
+		text: "move to bun for portability",
+	},
+	{
 		date: "2026-10-09",
 		text: "move to pnpm because deno died",
 	},
 	{
 		date: "2026-05-14",
 		text: "overhaul website layout",
-	},
-	{
-		date: "2025-11-05",
-		text: "move to deno for building and remove github link due to obsolescence",
 	},
 ].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
