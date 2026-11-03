@@ -28,4 +28,11 @@ export const systemMembers: SystemMember[] = [
 		species: "Serval",
 		website: "elle.llia.cc/luca",
 	},
+	{
+		url: "https://pazzy.llia.cc",
+		displayName: "Pazzy Ninine",
+		icon: "/assets/img/laurelae/pazzy.svg",
+		species: "Wolfdog, Cat",
+		website: "pazzy.llia.cc",
+	},
 ];
