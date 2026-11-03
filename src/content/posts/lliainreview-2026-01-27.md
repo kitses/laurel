@@ -2,7 +2,7 @@
 title: "Llia In Review 2026"
 description: "Celebrating how many hours of subparness."
 date: 2026-01-27
-author: "Sven"
+author: "Mel Gamble"
 feature_image: "/assets/img/feature/2026-01-27.avif"
 feature_caption: "Modified from <a href='https://commons.wikimedia.org/wiki/File:Aspergillus_niger_hyphae.jpg'>Aspergillus niger hyphae.jpg</a> by <a href='https://commons.wikimedia.org/wiki/User:Y_tambe'>Y_tambe</a>, licensed under the <a href='https://creativecommons.org/licenses/by-sa/3.0/deed.en'>CC BY-SA 3.0</a> samewise."
 ---
