@@ -42,7 +42,6 @@ For more personal information on us as a system, go to [system](/system/). Other
     <ul>
       <li><a href="https://ableton.com/">Ableton Live</a></li>
       <li><a href="https://reaper.fm/">REAPER</a></li>
-      <li>FL Studio</li>
     </ul>
   </div>
 </div>
