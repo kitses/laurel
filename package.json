@@ -37,8 +37,5 @@
 		"@parcel/watcher",
 		"esbuild",
 		"workerd"
-	],
-	"overrides": {
-		"preact-render-to-string": "^6.8.3"
-	}
+	]
 }
