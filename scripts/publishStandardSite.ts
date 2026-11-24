@@ -4,6 +4,7 @@ import { isDeepStrictEqual } from "node:util";
 import { createMarkdownProcessor } from "@astrojs/markdown-remark";
 import { parse as parseYaml } from "yaml";
 import {
+	type BlobRef,
 	type DocumentSource,
 	documentRecord,
 	documentRkeys,
@@ -12,13 +13,23 @@ import {
 	publicationUri,
 	standardSite,
 } from "../src/lib/standardSite";
+import {
+	documentCoverImage,
+	publicationIcon,
+	type RenderedImage,
+} from "./standardSiteImages";
 
 const POSTS_DIRECTORY = "src/content/posts";
+const ICON_SOURCE = "public/assets/img/favicon.svg";
 const PDS = process.env.ATPROTO_PDS ?? "https://selfhosted.social";
 const IDENTIFIER =
 	process.env.ATPROTO_IDENTIFIER ?? new URL(standardSite.url).hostname;
 const APP_PASSWORD = process.env.ATPROTO_APP_PASSWORD;
 const DRY_RUN = process.argv.includes("--dry-run");
+
+function publicFile(path: string): string {
+	return join("public", path.replace(/^\//, ""));
+}
 
 function htmlToText(html: string): string {
 	const namedEntities: Record<string, string> = {
@@ -90,6 +101,10 @@ async function readPosts(): Promise<DocumentSource[]> {
 				title: frontmatterString(data, "title", file),
 				description: frontmatterString(data, "description", file),
 				date,
+				coverImage:
+					typeof data.feature_image === "string" && data.feature_image.trim()
+						? data.feature_image
+						: null,
 				textContent: htmlToText(code),
 			};
 		}),
@@ -138,6 +153,30 @@ async function getExistingRecord(
 		);
 	}
 	return (await response.json()) as { value: unknown };
+}
+
+function describeImage(image: RenderedImage) {
+	return {
+		mimeType: image.mimeType,
+		width: image.width,
+		height: image.height,
+		size: image.data.byteLength,
+	};
+}
+
+async function uploadBlob(
+	image: RenderedImage,
+	accessJwt: string,
+): Promise<BlobRef> {
+	const body = (await xrpc("com.atproto.repo.uploadBlob", {
+		method: "POST",
+		headers: {
+			Authorization: `Bearer ${accessJwt}`,
+			"Content-Type": image.mimeType,
+		},
+		body: new Uint8Array(image.data),
+	})) as { blob: BlobRef };
+	return body.blob;
 }
 
 async function putRecord(
@@ -206,6 +245,13 @@ if (wellKnown !== publicationUri) {
 	);
 }
 
+const icon = await publicationIcon(ICON_SOURCE);
+const covers = await Promise.all(
+	posts.map((post) =>
+		post.coverImage ? documentCoverImage(publicFile(post.coverImage)) : null,
+	),
+);
+
 if (DRY_RUN) {
 	console.log(
 		JSON.stringify(
@@ -213,11 +259,16 @@ if (DRY_RUN) {
 				publication: {
 					rkey: standardSite.publicationRkey,
 					record: publicationRecord(),
+					icon: describeImage(icon),
 				},
-				documents: posts.map((post) => ({
-					rkey: rkeys.get(post.id),
-					record: documentRecord(post),
-				})),
+				documents: posts.map((post, index) => {
+					const cover = covers[index];
+					return {
+						rkey: rkeys.get(post.id),
+						record: documentRecord(post),
+						...(cover ? { coverImage: describeImage(cover) } : {}),
+					};
+				}),
 			},
 			null,
 			2,
@@ -227,16 +278,21 @@ if (DRY_RUN) {
 }
 
 const accessJwt = await login();
+const iconBlob = await uploadBlob(icon, accessJwt);
 console.log(
-	`publication ${await putRecord("site.standard.publication", standardSite.publicationRkey, publicationRecord(), accessJwt)} ${publicationUri}`,
+	`publication ${await putRecord("site.standard.publication", standardSite.publicationRkey, publicationRecord(iconBlob), accessJwt)} ${publicationUri}`,
 );
-for (const post of posts) {
+for (const [index, post] of posts.entries()) {
 	const rkey = rkeys.get(post.id);
 	if (!rkey) throw new Error(`Missing document key for ${post.id}`);
+	const cover = covers[index];
 	const outcome = await putRecord(
 		"site.standard.document",
 		rkey,
-		documentRecord(post),
+		documentRecord(
+			post,
+			cover ? await uploadBlob(cover, accessJwt) : undefined,
+		),
 		accessJwt,
 	);
 	console.log(`document ${outcome} ${documentUri(rkey)} ${post.id}`);

@@ -53,18 +53,27 @@ export function documentUri(rkey: string): string {
 	return `at://${standardSite.did}/site.standard.document/${rkey}`;
 }
 
+export interface BlobRef {
+	$type: "blob";
+	ref: { $link: string };
+	mimeType: string;
+	size: number;
+}
+
 export interface DocumentSource {
 	id: string;
 	title: string;
 	description: string;
 	date: Date;
+	coverImage: string | null;
 	textContent: string;
 }
 
-export function publicationRecord() {
+export function publicationRecord(icon?: BlobRef) {
 	return {
 		$type: "site.standard.publication",
 		url: standardSite.url,
+		...(icon ? { icon } : {}),
 		name: standardSite.name,
 		description: standardSite.description,
 		preferences: { showInDiscover: true },
@@ -98,13 +107,14 @@ export function publicationRecord() {
 	};
 }
 
-export function documentRecord(post: DocumentSource) {
+export function documentRecord(post: DocumentSource, coverImage?: BlobRef) {
 	return {
 		$type: "site.standard.document",
 		site: publicationUri,
 		path: `/posts/${post.id}/`,
 		title: post.title,
 		description: post.description,
+		...(coverImage ? { coverImage } : {}),
 		publishedAt: post.date.toISOString(),
 		textContent: post.textContent,
 	};
