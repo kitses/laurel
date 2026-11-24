@@ -15,17 +15,17 @@
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.12",
-		"@astrojs/markdown-remark": "7.3.3",
-		"@astrojs/mdx": "8.1.0",
-		"@astrojs/preact": "6.1.0",
+		"@astrojs/markdown-remark": "7.3.10",
+		"@astrojs/mdx": "8.1.6",
+		"@astrojs/preact": "6.1.6",
 		"@biomejs/biome": "^2.6.8",
 		"@napi-rs/canvas": "^1.2.0",
-		"astro": "7.4.0",
+		"astro": "7.4.13",
 		"astro-compress": "^2.4.3",
 		"preact": "^11.2.0",
 		"rehype-external-links": "^3.0.0",
 		"sass": "^1.108.2",
-		"typescript": "^6.0.3",
+		"typescript": "^7.0.2",
 		"wcag-contrast": "^3.0.0",
 		"wrangler": "^4.168.0",
 		"yaml": "^2.9.1"
@@ -37,5 +37,8 @@
 		"@parcel/watcher",
 		"esbuild",
 		"workerd"
-	]
+	],
+	"overrides": {
+		"preact-render-to-string": "^6.8.3"
+	}
 }
