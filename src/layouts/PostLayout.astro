@@ -11,6 +11,7 @@ interface Props {
 	feature_image?: string;
 	feature_alt?: string;
 	feature_caption?: string;
+	documentUri?: string;
 }
 
 const {
@@ -21,10 +22,11 @@ const {
 	feature_image,
 	feature_alt,
 	feature_caption,
+	documentUri,
 } = Astro.props;
 ---
 
-<BaseLayout title={title}>
+<BaseLayout title={title} documentUri={documentUri}>
   <main>
     <Navbar />
     <div class="contentcontainer">

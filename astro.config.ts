@@ -21,6 +21,7 @@ export default defineConfig({
 			HTML: {
 				"html-minifier-terser": {
 					collapseWhitespace: true,
+					removeAttributeQuotes: false,
 				},
 			},
 		}),
